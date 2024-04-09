@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,23 +8,28 @@
     <link rel="icon" href="assets/logoN.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <header>
+    <header class="header-scroll">
         <div class="logo">
-            <img src="assets/logoN.png" alt="Votre Logo" style="width: 7vh; height: auto; margin-top: 5%;">
+            <img src="assets/logoN.png" alt="Votre Logo">
         </div>
+        <button id="burger-btn">&#9776;</button>
+
         <nav>
             <ul>
-                <li><a href="#presentation">Présentation</a></li>
-                <li><a href="#galerie">Galerie</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#presentation" class="nav-link">Présentation</a></li>
+                <li><a href="#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
+        <a class="linkedinlogo" href="lien_vers_votre_profil_LinkedIn" target="_blank">
+            <img src="assets/linkedin.png" alt="LinkedIn Logo">
+        </a>
     </header>
 
     <section class="banner">
         <a href="#presentation" class="scroll-down"></a>
-
         <div class="carousel">
             <img src="assets/photos/test.jpg" alt="Photo 1">
             <img src="assets/photos/test2.jpg" alt="Photo 2">
@@ -33,6 +39,140 @@
         <h1> Anna Briançon</h1>
         <h2>Photographie</h2>
     </section>
+
+    <section class="banner2">
+        <img src="assets/photos/test4.jpg" alt="Photo 1">
+        <h1> Anna Briançon</h1>
+        <h2>Photographie</h2>
+    </section>
+    <section id="presentation" class="presentation">
+        <h2>Présentation</h2>
+        <div class="divider hidden"></div>
+        <div class="presentation-content">
+
+
+            <p>Développeuse informatique et photographe sur mon temps libre, je suis passionnée par ces deux domaines
+                qui me permettent de m'exprimer et de créer. </p>
+            <p>Habitant Bordeaux, j'aime arpenter les rues de ma ville, appareil photo en main, à la recherche de
+                moments uniques et de paysages inspirants. </p>
+            <p>Pour moi, la photographie est un moyen de capturer la beauté du monde
+                qui m'entoure et de partager ma vision avec les autres.</p>
+        </div>
+    </section>
+    <section id="galerie" class="galerie">
+        <h2>Galerie</h2>
+        <div class="divider hidden"></div>
+
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <a href="theme1.html">
+                    <img src="assets/photos/test.jpg" alt="Theme 1">
+                    <p>Description du thème 1</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme2.html">
+                    <img src="assets/photos/test2.jpg" alt="Theme 2">
+                    <p>Description du thème 2</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme1.html">
+                    <img src="assets/photos/test.jpg" alt="Theme 1">
+                    <p>Description du thème 1</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme2.html">
+                    <img src="assets/photos/test2.jpg" alt="Theme 2">
+                    <p>Description du thème 2</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme1.html">
+                    <img src="assets/photos/test.jpg" alt="Theme 1">
+                    <p>Description du thème 1</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme2.html">
+                    <img src="assets/photos/test2.jpg" alt="Theme 2">
+                    <p>Description du thème 2</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme1.html">
+                    <img src="assets/photos/test.jpg" alt="Theme 1">
+                    <p>Description du thème 1</p>
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="theme2.html">
+                    <img src="assets/photos/test2.jpg" alt="Theme 2">
+                    <p>Description du thème 2</p>
+                </a>
+            </div>
+            <!-- Ajoutez d'autres éléments de la galerie ici -->
+        </div>
+    </section>
+    <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <div class="divider hidden"></div>
+        <div class="contact-content">
+            <form action="https://formspree.io/f/mwkglaea" method="post" id="contactForm">
+                <label for="name">Nom:</label><br>
+                <input type="text" id="name" name="name" required><br>
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required><br>
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="4" required></textarea><br>
+                <button type="submit">Envoyer</button>
+            </form>
+            <div id="success-message" style="display: none; color: green; margin-top: 2%;"></div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Anna Briançon - Tous droits réservés.</p>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
     <script src="script.js"></script>
+    <script src="jquery.inview.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#contactForm').submit(function (e) {
+                e.preventDefault();
+
+                var formData = {
+                    name: $('#name').val(),
+                    email: $('#email').val(),
+                    message: $('#message').val()
+                };
+
+                $.ajax({
+                    url: 'https://formspree.io/f/mwkglaea',
+                    method: 'POST',
+                    data: formData,
+                    dataType: 'json',
+                    success: function (data) {
+                        console.log('Message envoyé avec succès');
+                        $('#success-message').text('Le message a été envoyé avec succès.');
+                        $('#success-message').show();
+                    },
+                    error: function (error) {
+                        console.error('Erreur lors de l\'envoi du message');
+                        $('#success-message').text('Erreur lors de l\'envoi du message, veuillez cliquer sur "Envoyer un mail');
+                        $('#success-message').show();
+
+                    }
+                });
+            });
+
+        });
+    </script>
 </body>
+
 </html>
