@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const carousel = document.querySelector('.carousel');
     const images = carousel.querySelectorAll('img');
     const totalImages = images.length;
@@ -20,26 +20,26 @@ document.addEventListener("DOMContentLoaded", function() {
         showImage(currentIndex);
     }
 
-    const interval = setInterval(nextImage, 20000); 
+    const interval = setInterval(nextImage, 20000);
 
     const prevButton = document.querySelector('.prev');
     const nextButton = document.querySelector('.next');
 
-    prevButton.addEventListener('click', function() {
+    prevButton.addEventListener('click', function () {
         clearInterval(interval);
         prevImage();
     });
 
-    nextButton.addEventListener('click', function() {
+    nextButton.addEventListener('click', function () {
         clearInterval(interval);
         nextImage();
     });
 });
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const nav = document.querySelector('header');
     const banner = document.querySelector('.banner');
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.scrollY > banner.offsetHeight) {
             nav.classList.add('scrolled');
         } else {
@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const navLinks = document.querySelectorAll('.nav-link');
 
     function highlightNavLink() {
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     highlightNavLink();
 
-    window.addEventListener('scroll', highlightNavLink); 
+    window.addEventListener('scroll', highlightNavLink);
 });
 
 
@@ -89,5 +89,24 @@ document.addEventListener('DOMContentLoaded', function () {
         link.addEventListener('click', function () {
             nav.classList.remove('show-menu');
         });
+    });
+});
+
+
+const scrollToTop = document.querySelector('.scroll-to-top');
+
+window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 300) {
+        scrollToTop.classList.add('show');
+    } else {
+        scrollToTop.classList.remove('show');
+    }
+});
+
+scrollToTop.addEventListener('click', (event) => {
+    event.preventDefault();
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
 });

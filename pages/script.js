@@ -1,93 +1,124 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const carousel = document.querySelector('.carousel');
-    const images = carousel.querySelectorAll('img');
-    const totalImages = images.length;
-    let currentIndex = 0;
+const galleryItems = document.querySelectorAll('.grid-item img');
+const photoViewer = document.getElementById('photoViewer');
+const photoViewerImg = photoViewer.querySelector('.photo-viewer__img');
+const photoViewerClose = photoViewer.querySelector('.photo-viewer__close');
 
-    function showImage(index) {
-        images.forEach((image, i) => {
-            image.style.transform = `translateX(-${index * 100}%)`;
-        });
-    }
+galleryItems.forEach((item) => {
+    item.addEventListener('click', (event) => {
+        const largeImageUrl = event.target.getAttribute('data-large-image');
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        showImage(currentIndex);
-    }
+        photoViewerImg.src = largeImageUrl;
 
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        showImage(currentIndex);
-    }
-
-    const interval = setInterval(nextImage, 20000); 
-
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
-
-    prevButton.addEventListener('click', function() {
-        clearInterval(interval);
-        prevImage();
-    });
-
-    nextButton.addEventListener('click', function() {
-        clearInterval(interval);
-        nextImage();
-    });
-});
-document.addEventListener("DOMContentLoaded", function() {
-    const nav = document.querySelector('header');
-    const banner = document.querySelector('.banner');
-
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > banner.offsetHeight) {
-            nav.classList.add('scrolled');
-        } else {
-            nav.classList.remove('scrolled');
-        }
+        photoViewer.style.display = 'block';
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
-    const navLinks = document.querySelectorAll('.nav-link');
+photoViewerClose.addEventListener('click', () => {
+    closePhotoViewer();
+});
 
-    function highlightNavLink() {
-        const sections = document.querySelectorAll('section');
-        const scrollPosition = window.scrollY;
+photoViewer.addEventListener('click', (event) => {
+    if (event.target !== photoViewerImg) {
+        closePhotoViewer();
+    }
+});
 
-        sections.forEach(section => {
-            if (scrollPosition >= section.offsetTop && scrollPosition < section.offsetTop + section.offsetHeight) {
-                const sectionId = section.getAttribute('id');
-                navLinks.forEach(link => {
-                    if (link.getAttribute('href').slice(1) === sectionId) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
+const photoViewerNavPrev = photoViewer.querySelector('.photo-viewer__nav--prev');
+const photoViewerNavNext = photoViewer.querySelector('.photo-viewer__nav--next');
+
+let currentImageIndex = -1;
+
+galleryItems.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+        const largeImageUrl = event.target.getAttribute('data-large-image');
+
+        photoViewerImg.src = largeImageUrl;
+
+        currentImageIndex = index;
+
+        photoViewer.style.display = 'block';
+    });
+});
+
+photoViewerNavPrev.addEventListener('click', (event) => {
+    event.stopPropagation();
+    navigate(-1);
+});
+
+photoViewerNavNext.addEventListener('click', (event) => {
+    event.stopPropagation();
+    navigate(1);
+});
+
+function navigate(direction) {
+    const newIndex = currentImageIndex + direction;
+
+    if (newIndex >= 0 && newIndex < galleryItems.length) {
+        photoViewerImg.src = galleryItems[newIndex].getAttribute('data-large-image');
+
+        currentImageIndex = newIndex;
+    }
+}
+
+function closePhotoViewer() {
+    photoViewer.style.display = 'none';
+}
+
+// Affiche le tooltip lors du survol d'un projet
+document.addEventListener('DOMContentLoaded', function () {
+    const tooltip = document.getElementById('tooltip');
+    const projets = document.querySelectorAll('.grid-item');
+    let mouseX, mouseY;
+
+    document.addEventListener('mousemove', function (event) {
+        mouseX = event.clientX + window.scrollX;
+        mouseY = event.clientY + window.scrollY;
+        updateTooltipPosition();
+
+    });
+
+    function updateTooltipPosition() {
+        tooltip.style.position = 'absolute';
+        tooltip.style.left = `${mouseX + 10}px`;
+        tooltip.style.top = `${mouseY + 10}px`;
+    }
+
+    projets.forEach(projet => {
+        projet.addEventListener('mouseover', function () {
+            if (window.innerWidth > 1000) {
+                const category = projet.getAttribute('data-text');
+                tooltip.style.display = 'block';
+                tooltip.innerHTML = category;
+                projet.classList.add('hovered');
             }
         });
-    }
 
-    highlightNavLink();
-
-    window.addEventListener('scroll', highlightNavLink); 
-});
-
-
-// Affiche le menu lors du clique sur le bouton burger
-document.addEventListener('DOMContentLoaded', function () {
-    const burgerBtn = document.getElementById('burger-btn');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    burgerBtn.addEventListener('click', function () {
-        nav.classList.toggle('show-menu');
-    });
-
-    navLinks.forEach(function (link) {
-        link.addEventListener('click', function () {
-            nav.classList.remove('show-menu');
+        projet.addEventListener('mouseout', function () {
+            if (window.innerWidth > 1000) {
+                tooltip.style.display = 'none';
+                projet.classList.remove('hovered');
+            }
         });
     });
+
+    const scrollToTop = document.querySelector('.scroll-to-top');
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTop.classList.add('show');
+        } else {
+            scrollToTop.classList.remove('show');
+        }
+    });
+
+    scrollToTop.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+
 });
+
+

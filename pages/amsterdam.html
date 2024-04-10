@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amsterdam</title>
+    <link rel="icon" href="assets/logoN.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/default-skin/default-skin.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe-ui-default.min.js"></script>
+
+</head>
+
+
+<body>
+    <header class="header-scroll">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../assets/logoN.png" alt="Votre Logo">
+            </a>
+        </div>
+        <button id="burger-btn">&#9776;</button>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="../index.html#presentation" class="nav-link">Présentation</a></li>
+                <li><a href="../index.html#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- <a class="linkedinlogo" href="https://www.linkedin.com/in/anna-brian%C3%A7on-68b72124b/" target="_blank">
+            <img src="../assets/linkedinN.png" alt="LinkedIn Logo">
+        </a> -->
+    </header>
+    <div class="header-nav">
+        <a href="italie.html" class="header-nav__arrow header-nav__arrow--left">&lt; Italie</a>
+        <a href="costa_rica.html" class="header-nav__arrow header-nav__arrow--right"> Costa Rica &gt;</a>
+    </div>
+    <div id="tooltip" style="z-index: 100000000000000000000000;"></div>
+    <div>
+        <a href="#" class="scroll-to-top">
+            <img src="../assets/fleches-vers-le-haut.png" width="50%" alt="Retour en haut">
+        </a>
+    </div>
+    <section class="content">
+        <div class="page-title">
+            <h1>Amsterdam</h1>
+        </div>
+
+        <div class="page-text">
+            <p>La capitale des Pays-Bas, est une ville fascinante où l'histoire et la modernité se rencontrent
+                harmonieusement.</p>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item" data-text="Au crépuscule">
+                <img data-large-image="../assets/photos/amsterdam/fleuve.jpg"
+                    src="../assets/photos/amsterdam/fleuve.jpg" alt="Au crépuscule">
+                <p class="title-picture">Au crépuscule</p>
+            </div>
+            <div class="grid-item" data-text="La couronne de l'édifice">
+                <img data-large-image="../assets/photos/amsterdam/dome.jpg" src="../assets/photos/amsterdam/dome.jpg"
+                    alt="La couronne de l'édifice">
+                <p class="title-picture">La couronne de l'édifice</p>
+            </div>
+            <div class="grid-item" data-text="Amsterdam sous un autre angle">
+                <img data-large-image="../assets/photos/amsterdam/ruejour.jpg"
+                    src="../assets/photos/amsterdam/ruejour.jpg" alt="Amsterdam sous un autre angle">
+                <p class="title-picture">Amsterdam sous un autre angle</p>
+            </div>
+            <div class="grid-item" data-text="Digue de la mer">
+                <img data-large-image="../assets/photos/amsterdam/zeedijk.jpeg"
+                    src="../assets/photos/amsterdam/zeedijk.jpeg" alt="Digue de la mer">
+                <p class="title-picture">Digue de la mer</p>
+            </div>
+            <div class="grid-item" data-text="Reflets nocturnes">
+                <img data-large-image="../assets/photos/amsterdam/ruenuit.jpg"
+                    src="../assets/photos/amsterdam/ruenuit.jpg" alt="Reflets nocturnes">
+                <p class="title-picture">Reflets nocturnes</p>
+            </div>
+            <div class="grid-item" data-text="Sérénité au fil de l'eau">
+                <img data-large-image="../assets/photos/amsterdam/riviere.jpg"
+                    src="../assets/photos/amsterdam/riviere.jpg" alt="Sérénité au fil de l'eau">
+                <p class="title-picture">Sérénité au fil de l'eau</p>
+            </div>
+
+            <div class="photo-viewer" id="photoViewer">
+                <div class="photo-viewer__bg"></div>
+                <img class="photo-viewer__img" src="" alt="">
+                <span class="photo-viewer__close">&times;</span>
+                <div class="photo-viewer__nav photo-viewer__nav--prev">&lt;</div>
+                <div class="photo-viewer__nav photo-viewer__nav--next">&gt;</div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 Anna Briançon - Tous droits réservés.</p>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+
+</body>

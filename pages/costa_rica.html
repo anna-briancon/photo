@@ -7,6 +7,12 @@
     <title>Costa Rica</title>
     <link rel="icon" href="assets/logoN.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/default-skin/default-skin.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe-ui-default.min.js"></script>
+
 </head>
 
 
@@ -21,35 +27,112 @@
 
         <nav>
             <ul>
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
                 <li><a href="../index.html#presentation" class="nav-link">Présentation</a></li>
                 <li><a href="../index.html#galerie" class="nav-link">Galerie</a></li>
                 <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
             </ul>
         </nav>
-        <a class="linkedinlogo" href="https://www.linkedin.com/in/anna-brian%C3%A7on-68b72124b/" target="_blank">
+        <!-- <a class="linkedinlogo" href="https://www.linkedin.com/in/anna-brian%C3%A7on-68b72124b/" target="_blank">
             <img src="../assets/linkedinN.png" alt="LinkedIn Logo">
-        </a>
+        </a> -->
     </header>
-
-    <div class="page-title">
-        <h1>Costa Rica</h1>
+    <div class="header-nav">
+        <a href="amsterdam.html" class="header-nav__arrow header-nav__arrow--left">&lt; Amsterdam</a>
+        <a href="italie.html" class="header-nav__arrow header-nav__arrow--right"> Italie &gt;</a>
     </div>
-
-    <div class="page-text">
-        <p>Texte descriptif sur le Costa Rica.</p>
+    <div id="tooltip" style="z-index: 100000000000000000000000;"></div>
+    <div>
+        <a href="#" class="scroll-to-top">
+            <img src="../assets/fleches-vers-le-haut.png" width="50%" alt="Retour en haut">
+        </a>
     </div>
+    <section class="content">
+        <div class="page-title">
+            <h1>Costa Rica</h1>
+        </div>
 
-    <div class="grid-container">
-        <div class="grid-item">
-            <img src="" alt="Image 1">
+        <div class="page-text">
+            <p>Niché entre la mer des Caraïbes et l'océan Pacifique, le Costa Rica offre une incroyable diversité de
+                paysages, de cultures et de vie sauvage.</p>
         </div>
-        <div class="grid-item">
-            <img src="" alt="Image 2">
+
+        <div class="grid-container">
+            <div class="grid-item" data-text="Le ciel menaçant au-dessus du rivage">
+                <img data-large-image="../assets/photos/costa_rica/tempete.jpeg"
+                    src="../assets/photos/costa_rica/tempete.jpeg" alt="Le ciel menaçant au-dessus du rivage">
+                <p class="title-picture">Le ciel menaçant au-dessus du rivage</p>
+            </div>
+            <div class="grid-item" data-text="La marée en approche">
+                <img data-large-image="../assets/photos/costa_rica/maree.jpg"
+                    src="../assets/photos/costa_rica/maree.jpg" alt="La marée en approche">
+                <p class="title-picture">La marée en approche</p>
+            </div>
+            <div class="grid-item" data-text="Pause gourmande">
+                <img data-large-image="../assets/photos/costa_rica/peroquet.jpeg"
+                    src="../assets/photos/costa_rica/peroquet.jpeg" alt="Pause gourmande">
+                <p class="title-picture">Pause gourmande</p>
+            </div>
+            <div class="grid-item" data-text="Miroir de la nature">
+                <img data-large-image="../assets/photos/costa_rica/playabaeina.jpeg"
+                    src="../assets/photos/costa_rica/playabaeina.jpeg" alt="Miroir de la nature">
+                <p class="title-picture">Miroir de la nature</p>
+            </div>
+            <div class="grid-item" data-text="L'arrivée de l'orage">
+                <img data-large-image="../assets/photos/costa_rica/tempete2.jpg"
+                    src="../assets/photos/costa_rica/tempete2.jpg" alt="L'arrivée de l'orage">
+                <p class="title-picture">L'arrivée de l'orage</p>
+            </div>
+            <div class="grid-item" data-text="Le Décollage Imminent">
+                <img data-large-image="../assets/photos/costa_rica/toucan.jpeg"
+                    src="../assets/photos/costa_rica/toucan.jpeg" alt="Le Décollage Imminent">
+                <p class="title-picture">Le Décollage Imminent</p>
+            </div>
+            <div class="grid-item" data-text="Réveil dans les hauteurs">
+                <img data-large-image="../assets/photos/costa_rica/parresseu.jpeg"
+                    src="../assets/photos/costa_rica/parresseu.jpeg" alt="Réveil dans les hauteurs">
+                <p class="title-picture">Réveil dans les hauteurs</p>
+            </div>
+            <div class="grid-item" data-text="Tisseuse de toile">
+                <img data-large-image="../assets/photos/costa_rica/araignee.jpeg"
+                    src="../assets/photos/costa_rica/araignee.jpeg" alt="Tisseuse de toile">
+                <p class="title-picture">Tisseuse de toile</p>
+            </div>
+            <div class="grid-item" data-text="Élégance en mouvement">
+                <img data-large-image="../assets/photos/costa_rica/colibri.jpeg"
+                    src="../assets/photos/costa_rica/colibri.jpeg" alt="Élégance en mouvement">
+                <p class="title-picture">Élégance en mouvement</p>
+            </div>
+            <div class="grid-item" data-text="La sentinelle de la plantation">
+                <img data-large-image="../assets/photos/costa_rica/araignee2.jpg"
+                    src="../assets/photos/costa_rica/araignee2.jpg" alt="La sentinelle de la plantation">
+                <p class="title-picture">La sentinelle de la plantation</p>
+            </div>
+            <div class="grid-item" data-text="L'emprise de la mer">
+                <img data-large-image="../assets/photos/costa_rica/bateau.jpeg"
+                    src="../assets/photos/costa_rica/bateau.jpeg" alt="L'emprise de la mer">
+                <p class="title-picture">L'emprise de la mer</p>
+            </div>
+            <div class="grid-item" data-text="Reflets dorés sur les vagues">
+                <img data-large-image="../assets/photos/costa_rica/sunsetwave.jpeg"
+                    src="../assets/photos/costa_rica/sunsetwave.jpeg" alt="Reflets dorés sur les vagues">
+                <p class="title-picture">Reflets dorés sur les vagues</p>
+            </div>
         </div>
-        <div class="grid-item">
-            <img src="" alt="Image 3">
+        <div class="photo-viewer" id="photoViewer">
+            <div class="photo-viewer__bg"></div>
+            <img class="photo-viewer__img" src="" alt="">
+            <span class="photo-viewer__close">&times;</span>
+            <div class="photo-viewer__nav photo-viewer__nav--prev">&lt;</div>
+            <div class="photo-viewer__nav photo-viewer__nav--next">&gt;</div>
         </div>
-    </div>
+
+
+    </section>
+    <footer>
+        <p>&copy; 2024 Anna Briançon - Tous droits réservés.</p>
+    </footer>
+    <script src="../script.js"></script>
     <script src="script.js"></script>
 
 </body>

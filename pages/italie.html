@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Italie</title>
+    <link rel="icon" href="assets/logoN.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/default-skin/default-skin.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.5/photoswipe-ui-default.min.js"></script>
+
+</head>
+
+
+<body>
+    <header class="header-scroll">
+        <div class="logo">
+            <a href="../index.html">
+                <img src="../assets/logoN.png" alt="Votre Logo">
+            </a>
+        </div>
+        <button id="burger-btn">&#9776;</button>
+
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="nav-link">Accueil</a></li>
+                <li><a href="../index.html#presentation" class="nav-link">Présentation</a></li>
+                <li><a href="../index.html#galerie" class="nav-link">Galerie</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+        <!-- <a class="linkedinlogo" href="https://www.linkedin.com/in/anna-brian%C3%A7on-68b72124b/" target="_blank">
+            <img src="../assets/linkedinN.png" alt="LinkedIn Logo">
+        </a> -->
+    </header>
+    <div class="header-nav">
+        <a href="costa_rica.html" class="header-nav__arrow header-nav__arrow--left">&lt; Costa Rica</a>
+        <a href="amsterdam.html" class="header-nav__arrow header-nav__arrow--right"> Amsterdam &gt;</a>
+    </div>
+    
+    <div id="tooltip" style="z-index: 100000000000000000000000;"></div>
+    <div>
+        <a href="#" class="scroll-to-top">
+            <img src="../assets/fleches-vers-le-haut.png" width="50%" alt="Retour en haut">
+        </a>
+    </div>
+    <section class="content">
+        <div class="page-title">
+            <h1>Italie</h1>
+        </div>
+
+        <div class="page-text">
+            <p>Et ses paysages époustouflants, son riche patrimoine culturel et historique, et sa gastronomie renommée.
+            </p>
+        </div>
+
+        <div class="grid-container">
+            <div class="grid-item" data-text="Le Balcon d'Émeraude sur la Méditerranée">
+                <img data-large-image="../assets/photos/italie/falaise.jpg" src="../assets/photos/italie/falaise.jpg"
+                    alt="Le Balcon d'Émeraude sur la Méditerranée">
+                <p class="title-picture">Le Balcon d'Émeraude sur la Méditerranée</p>
+            </div>
+            <div class="grid-item" data-text="Mosaïque marine italienne">
+                <img data-large-image="../assets/photos/italie/ville4.jpg" src="../assets/photos/italie/ville4.jpg"
+                    alt="Mosaïque marine italienne">
+                <p class="title-picture">Mosaïque marine italienne</p>
+            </div>
+            <div class="grid-item" data-text="Mosaïque italienne">
+                <img data-large-image="../assets/photos/italie/sunset.jpg" src="../assets/photos/italie/ville2.jpg"
+                    alt="Mosaïque italienne">
+                <p class="title-picture">Mosaïque italienne</p>
+            </div>
+            <div class="grid-item" data-text="Promessa del sole sulla diga">
+                <img data-large-image="../assets/photos/italie/sunset.jpg" src="../assets/photos/italie/sunset.jpg"
+                    alt="Promessa del sole sulla diga">
+                <p class="title-picture">Promessa del sole sulla diga</p>
+            </div>
+            <div class="grid-item" data-text="Symphonie de couleurs">
+                <img data-large-image="../assets/photos/italie/ville3.jpg" src="../assets/photos/italie/ville3.jpg"
+                    alt="Symphonie de couleurs">
+                <p class="title-picture">Symphonie de couleurs</p>
+            </div>
+            <div class="grid-item" data-text="Charmes cachés d'une ruelle italienne">
+                <img data-large-image="../assets/photos/italie/rue.jpg" src="../assets/photos/italie/rue.jpg"
+                    alt="Charmes cachés d'une ruelle italienne">
+                <p class="title-picture">Charmes cachés d'une ruelle italienne</p>
+            </div>
+
+        </div>
+        <div class="photo-viewer" id="photoViewer">
+            <div class="photo-viewer__bg"></div>
+            <img class="photo-viewer__img" src="" alt="">
+            <span class="photo-viewer__close">&times;</span>
+            <div class="photo-viewer__nav photo-viewer__nav--prev">&lt;</div>
+            <div class="photo-viewer__nav photo-viewer__nav--next">&gt;</div>
+        </div>
+
+
+    </section>
+    <footer>
+        <p>&copy; 2024 Anna Briançon - Tous droits réservés.</p>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="script.js"></script>
+
+</body>
