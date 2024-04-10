@@ -90,23 +90,24 @@ document.addEventListener('DOMContentLoaded', function () {
             nav.classList.remove('show-menu');
         });
     });
-});
 
+    const scrollToTop = document.querySelector('.scroll-to-top');
 
-const scrollToTop = document.querySelector('.scroll-to-top');
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 300) {
+            scrollToTop.classList.add('show');
+        } else {
+            scrollToTop.classList.remove('show');
+        }
+    });
 
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset > 300) {
-        scrollToTop.classList.add('show');
-    } else {
-        scrollToTop.classList.remove('show');
-    }
-});
-
-scrollToTop.addEventListener('click', (event) => {
-    event.preventDefault();
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
+    scrollToTop.addEventListener('click', (event) => {
+        event.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 });
+
+
