@@ -1,0 +1,94 @@
+
+/* Presentation */
+.presentation {
+    margin-top: 18vh;
+    background-color: #f9f9f9;
+    padding: 50px 20px;
+    text-align: center;
+    padding-bottom: 13vh;
+}
+
+.presentation-content {
+    max-width: 60vh;
+    margin: 0 auto;
+}
+
+.presentation h2 {
+    margin-top: 13vh;
+    font-size: 2.4em;
+    color: #000;
+}
+
+.presentation p {
+    margin: 4vh 0;
+    font-size: 1.1em;
+    color: #555;
+}
+
+.presentation-img {
+    float: left;
+    width: 15%;
+    margin-left: 32vw;
+    margin-right: 1%;
+    margin-bottom: 0.5%;
+    border-radius: 5%;
+}
+
+.presentation-content {
+    text-align: left;
+}
+
+@media only screen and (max-width: 1024px) {
+    .presentation {
+        padding: 10vh 1vh;
+        padding-bottom: 9vh;
+    }
+
+    .presentation-content {
+        max-width: 50vh;
+    }
+
+    .presentation h2 {
+        margin-top: 0vh;
+        font-size: 2.6em;
+    }
+
+    .presentation p {
+        font-size: 1.2em;
+        margin: 2vh 0;
+    }
+
+    .presentation-img {
+        margin-left: 16vw;
+        margin-right: 2%;
+        margin-bottom: 1%;
+    }
+
+    .presentation-content {
+        text-align: justify;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .presentation h2 {
+        margin-top: 5.5vh;
+        font-size: 1.4em;
+    }
+
+    .presentation p {
+        font-size: 0.8em;
+    }
+
+    .presentation {
+        margin-top: 0vh;
+        padding: 2vh 8vh;
+        padding-bottom: 8vh;
+    }
+
+    .presentation-img {
+        margin-left: 2vw;
+        margin-right: 3%;
+        width: 20%;
+        margin-bottom: 1.5%;
+    }
+}

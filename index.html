@@ -6,7 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anna Briançon</title>
     <link rel="icon" href="assets/logoN.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/banniere.css">
+    <link rel="stylesheet" href="css/presentation.css">
+    <link rel="stylesheet" href="css/galerie.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/carousel.css">
+
 </head>
 
 <body>
@@ -37,16 +43,38 @@
     <section class="banner">
         <a href="#presentation" class="scroll-down"></a>
         <div class="carousel">
-            <!-- <img src="assets/photos/test.jpg" alt="sunset"> -->
-            <img src="assets/photos/costa_rica/tempete.jpeg" alt="costa rica - tempete">
-            <img src="assets/photos/italie/affiche.png" alt="costa rica - playabaleina">
-            <img src="assets/photos/costa_rica/toucan.jpeg" alt="costa rica - toucan">
-            <img src="assets/photos/amsterdam/ruenuit.jpg" alt="costa rica - playabaleina">
-            <img src="assets/photos/costa_rica/playabaeina.jpeg" alt="costa rica - playabaleina">
+            <input type="radio" id="carousel-css-slide-1" name="carousel-css" value="slide-1" checked/>
+            <input type="radio" id="carousel-css-slide-2" name="carousel-css" value="slide-2"/>
+            <input type="radio" id="carousel-css-slide-3" name="carousel-css" value="slide-3"/>
+            <input type="radio" id="carousel-css-slide-4" name="carousel-css" value="slide-4"/>
+            <input type="radio" id="carousel-css-slide-5" name="carousel-css" value="slide-5"/>
+    
+            <label for="carousel-css-slide-1" data-value="slide-1"></label>
+            <label for="carousel-css-slide-2" data-value="slide-2"></label>
+            <label for="carousel-css-slide-3" data-value="slide-3"></label>
+            <label for="carousel-css-slide-4" data-value="slide-4"></label>
+            <label for="carousel-css-slide-5" data-value="slide-5"></label>
+    
+            <div class="carousel-wrapper">
+                <div class="carousel-slide">
+                    <img src="assets/photos/costa_rica/tempete.jpeg" alt="costa rica - tempete">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/photos/italie/affiche.png" alt="italie">
 
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/photos/costa_rica/toucan.jpeg" alt="costa rica - toucan">
+
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/photos/amsterdam/ruenuit.jpg" alt="amsterdam - rue nuit">
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/photos/costa_rica/playabaeina.jpeg" alt="costa rica - playabaleina"> 
+                </div>
+            </div>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
         <h1> Anna Briançon</h1>
         <h2>Photographie</h2>
     </section>
@@ -118,9 +146,7 @@
     </footer>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
-    <script src="script.js"></script>
-    <script src="jquery.inview.js"></script>
-
+    <script src="script/script.js"></script>
     <script>
         $(document).ready(function () {
             $('#contactForm').submit(function (e) {

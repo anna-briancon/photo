@@ -1,0 +1,145 @@
+
+/* Contact */
+
+.contact {
+    padding-top: 1vh;
+    margin: 0 auto;
+    padding-bottom: 10vh;
+    background-color: #f9f9f9;
+
+}
+
+.contact h2 {
+    margin-top: 10vh;
+    text-align: center;
+    font-size: 2.4em;
+    color: #000;
+}
+
+.contact-content {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-content label {
+    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-content input[type="text"],
+.contact-content input[type="email"],
+.contact-content textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.contact-content input[type="text"]:focus,
+.contact-content input[type="email"]:focus,
+.contact-content textarea:focus {
+    border-color: #333;
+}
+
+.contact-content button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-content button[type="submit"]:hover {
+    background-color: #555;
+}
+
+@media only screen and (max-width: 1024px) {
+    .contact {
+        padding: 6vh 1vh;
+        padding-bottom: 2vh;
+    }
+
+    .contact h2 {
+        margin-top: 0vh;
+        font-size: 2.6em;
+    }
+
+    .contact-content {
+        width: 100%;
+        max-width: 50vh;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-content label {
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    .contact-content input[type="text"],
+    .contact-content input[type="email"],
+    .contact-content textarea {
+        width: 100%;
+        padding: 10px;
+        font-size: 1.2em;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+
+    .contact-content input[type="text"]:focus,
+    .contact-content input[type="email"]:focus,
+    .contact-content textarea:focus {
+        border-color: #333;
+    }
+
+    .contact-content button[type="submit"] {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .contact-content {
+        max-width: 70vw;
+
+    }
+
+    .contact h2 {
+        margin-top: 0vh;
+        font-size: 1.4em;
+    }
+
+    .contact-content label,
+    .contact-content input[type="text"],
+    .contact-content input[type="email"],
+    .contact-content textarea,
+    .contact-content button[type="submit"] {
+        font-size: 0.8em;
+    }
+}

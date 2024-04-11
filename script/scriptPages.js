@@ -122,3 +122,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const burgerBtn = document.getElementById('burger-btn');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('.nav-link');
+
+    burgerBtn.addEventListener('click', function () {
+        nav.classList.toggle('show-menu');
+    });
+
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function () {
+            nav.classList.remove('show-menu');
+        });
+    });
+});

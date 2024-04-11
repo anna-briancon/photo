@@ -1,0 +1,130 @@
+
+.carousel *{
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-wrapper{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+}
+
+.carousel-slide{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+
+    transform: translate(100%, 0);
+    opacity: 0;
+}
+
+input[name="carousel-css"][value="slide-6"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(5),
+input[name="carousel-css"][value="slide-5"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(4),
+input[name="carousel-css"][value="slide-4"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(3),
+input[name="carousel-css"][value="slide-3"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(2),
+input[name="carousel-css"][value="slide-2"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(1),
+input[name="carousel-css"][value="slide-1"]:checked ~ .carousel-wrapper .carousel-slide:last-of-type{
+    display: flex;
+    opacity: 1;
+    transform: translate(-100%, 0);
+    transition: 0.5s transform, 0.1s z-index 0.4s;
+}
+
+input[name="carousel-css"][value="slide-1"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(2),
+input[name="carousel-css"][value="slide-2"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(3),
+input[name="carousel-css"][value="slide-3"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(4),
+input[name="carousel-css"][value="slide-4"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(5),
+input[name="carousel-css"][value="slide-5"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(6),
+input[name="carousel-css"]:last-of-type:checked ~ .carousel-wrapper .carousel-slide:nth-child(1){
+    display: flex;
+    opacity: 1;
+    transform: translate(100%, 0);
+    transition: 0.5s transform, 0.1s z-index 0.4s;
+}
+
+input[name="carousel-css"][value="slide-1"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(1),
+input[name="carousel-css"][value="slide-2"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(2),
+input[name="carousel-css"][value="slide-3"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(3),
+input[name="carousel-css"][value="slide-4"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(4),
+input[name="carousel-css"][value="slide-5"]:checked ~ .carousel-wrapper .carousel-slide:nth-child(5){
+    display: flex;
+    transition: 0.5s transform;
+    transform: translate(0, 0);
+    opacity: 1;
+    z-index: 2;
+}
+
+.carousel label[data-value|="slide"]{
+    width: 0 !important;
+    height: 0 !important;
+}
+
+.carousel label[data-value|="slide"]::before,
+.carousel label[data-value|="slide"]::after{
+    content: "";
+    display: none;
+    position: absolute;
+    z-index: 3;
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    cursor: pointer;
+
+    top: 0; bottom: 0;
+    margin: auto 0;
+    background-color: rgba(240, 248, 255, 0.265);
+    border-radius: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.carousel label[data-value|="slide"]::before{
+    background-image: url("../assets/gauche.png");
+}
+
+.carousel label[data-value|="slide"]::after{
+    background-image: url("../assets/droite.png");
+}
+
+input[name="carousel-css"][value="slide-1"]:checked ~ label[data-value|="slide"]:last-of-type::before,
+input[name="carousel-css"][value="slide-2"]:checked ~ label[data-value="slide-1"]::before,
+input[name="carousel-css"][value="slide-3"]:checked ~ label[data-value="slide-2"]::before,
+input[name="carousel-css"][value="slide-4"]:checked ~ label[data-value="slide-3"]::before,
+input[name="carousel-css"][value="slide-5"]:checked ~ label[data-value="slide-4"]::before,
+input[name="carousel-css"][value="slide-6"]:checked ~ label[data-value="slide-5"]::before{
+    display: inline-block;
+    left: 1rem;
+}
+
+input[name="carousel-css"][value|="slide"]:last-of-type:checked ~ label[data-value="slide-1"]::after,
+input[name="carousel-css"][value="slide-1"]:checked ~ label[data-value="slide-2"]::after,
+input[name="carousel-css"][value="slide-2"]:checked ~ label[data-value="slide-3"]::after,
+input[name="carousel-css"][value="slide-3"]:checked ~ label[data-value="slide-4"]::after,
+input[name="carousel-css"][value="slide-4"]:checked ~ label[data-value="slide-5"]::after{
+    display: inline-block;
+    right: 1rem;
+}
+
+.carousel-no-bullets input[name="carousel-css"][value|="slide"]{
+    display: none;
+}
+
+.carousel-non-selectable{
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+}

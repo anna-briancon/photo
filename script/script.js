@@ -1,42 +1,42 @@
 
-// Défilement du carousel
-document.addEventListener("DOMContentLoaded", function () {
-    const carousel = document.querySelector('.carousel');
-    const images = carousel.querySelectorAll('img');
-    const totalImages = images.length;
-    let currentIndex = 0;
+// // Défilement du carousel
+// document.addEventListener("DOMContentLoaded", function () {
+//     const carousel = document.querySelector('.carousel');
+//     const images = carousel.querySelectorAll('img');
+//     const totalImages = images.length;
+//     let currentIndex = 0;
 
-    function showImage(index) {
-        images.forEach((image, i) => {
-            image.style.transform = `translateX(-${index * 100}%)`;
-        });
-    }
+//     function showImage(index) {
+//         images.forEach((image, i) => {
+//             image.style.transform = `translateX(-${index * 100}%)`;
+//         });
+//     }
 
-    function nextImage() {
-        currentIndex = (currentIndex + 1) % totalImages;
-        showImage(currentIndex);
-    }
+//     function nextImage() {
+//         currentIndex = (currentIndex + 1) % totalImages;
+//         showImage(currentIndex);
+//     }
 
-    function prevImage() {
-        currentIndex = (currentIndex - 1 + totalImages) % totalImages;
-        showImage(currentIndex);
-    }
+//     function prevImage() {
+//         currentIndex = (currentIndex - 1 + totalImages) % totalImages;
+//         showImage(currentIndex);
+//     }
 
-    const interval = setInterval(nextImage, 20000);
+//     const interval = setInterval(nextImage, 20000);
 
-    const prevButton = document.querySelector('.prev');
-    const nextButton = document.querySelector('.next');
+//     const prevButton = document.querySelector('.prev');
+//     const nextButton = document.querySelector('.next');
 
-    prevButton.addEventListener('click', function () {
-        clearInterval(interval);
-        prevImage();
-    });
+//     prevButton.addEventListener('click', function () {
+//         clearInterval(interval);
+//         prevImage();
+//     });
 
-    nextButton.addEventListener('click', function () {
-        clearInterval(interval);
-        nextImage();
-    });
-});
+//     nextButton.addEventListener('click', function () {
+//         clearInterval(interval);
+//         nextImage();
+//     });
+// });
 
 // Détecte des qu'on sort du header en scrollant
 document.addEventListener("DOMContentLoaded", function () {
@@ -116,4 +116,19 @@ document.addEventListener('DOMContentLoaded', function () {
     // });
 });
 
+// Défilement fluide lors du clique sur les deux fleches vers le bas 
+document.addEventListener("DOMContentLoaded", function () {
+    const scrollDownLink = document.querySelector('.scroll-down');
 
+    scrollDownLink.addEventListener('click', function (event) {
+        event.preventDefault(); 
+
+        const targetSection = document.querySelector('#presentation');
+        if (targetSection) {
+            targetSection.scrollIntoView({
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+    });
+});
