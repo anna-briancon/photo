@@ -165,19 +165,19 @@ nav ul li a:hover {
 #tooltip {
     display: none;
     position: fixed;
-    padding: 14px 20px;
+    padding: 10px 16px;
     color: #ffffff;
     font-size: 1em;
     font-weight: 500;
-    background-color: #333333;
-    border-radius: 25px;
+    background-color: #333333b9;
+    border-radius: 15px;
     pointer-events: none;
     z-index: 1000000;
     text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
     white-space: nowrap;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    border: 3px solid #333333d2;
 }
-
 
 .title-picture {
     display: none;

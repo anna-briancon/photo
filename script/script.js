@@ -121,14 +121,87 @@ document.addEventListener("DOMContentLoaded", function () {
     const scrollDownLink = document.querySelector('.scroll-down');
 
     scrollDownLink.addEventListener('click', function (event) {
-        event.preventDefault(); 
+        event.preventDefault();
 
         const targetSection = document.querySelector('#presentation');
         if (targetSection) {
             targetSection.scrollIntoView({
-                behavior: 'smooth', 
-                block: 'start' 
+                behavior: 'smooth',
+                block: 'start'
             });
         }
     });
 });
+
+// Carte
+var map = L.map('map').setView([50, 0], 2); 
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+var LeafIcon = L.Icon.extend({
+    options: {
+        shadowUrl: 'assets/cadre.png',
+        iconSize: [80, 65],
+        shadowSize:   [95, 81],
+        iconAnchor: [30, 94],
+        shadowAnchor: [39, 97],
+        popupAnchor: [-3, -76]
+    }
+});
+
+var costa_rica = new LeafIcon({ iconUrl: 'assets/photos/costa_rica/tempete2.jpg' }),
+    italie = new LeafIcon({ iconUrl: 'assets/photos/italie/affiche.png' }),
+    amsterdam = new LeafIcon({ iconUrl: 'assets/photos/amsterdam/ruenuit.jpg' });
+
+L.icon = function (options) {
+    return new L.Icon(options);
+};
+
+var marker1 = L.marker([9.7489, -83.7534], {icon: costa_rica}).addTo(map);
+var marker2 = L.marker([41.8719, 12.5674], {icon: italie}).addTo(map);
+var marker3 = L.marker([52.3676, 4.9041], {icon: amsterdam}).addTo(map);
+
+marker1.on('click', function() {
+    window.location.href = 'pages/costa_rica.html';
+});
+
+marker2.on('click', function() {
+    window.location.href = 'pages/italie.html';
+});
+
+marker3.on('click', function() {
+    window.location.href = 'pages/amsterdam.html';
+});
+
+// choix carte / gallerie
+document.addEventListener("DOMContentLoaded", function () {
+    var galleryText = document.querySelector('.toggleText:first-child');
+    var mapText = document.querySelector('.toggleText:last-child');
+    var gallerySection = document.querySelector('.gallery-container');
+    var mapSection = document.querySelector('.map');
+
+    mapText.addEventListener('click', function () {
+        if (!gallerySection.classList.contains('invisible')) {
+            mapText.style.fontWeight = 'bold';
+            galleryText.style.fontWeight = 'normal';
+            gallerySection.classList.add('invisible');
+            gallerySection.style.display = 'none';
+            mapSection.classList.remove('invisible');
+            mapSection.style.display = 'block';
+        }
+    });
+
+    galleryText.addEventListener('click', function () {
+        if (!mapSection.classList.contains('invisible')) {
+            galleryText.style.fontWeight = 'bold';
+            mapText.style.fontWeight = 'normal';
+            gallerySection.classList.remove('invisible');
+            gallerySection.style.display = 'grid';
+            mapSection.classList.add('invisible');
+            mapSection.style.display = 'none';
+        }
+    });
+});
+

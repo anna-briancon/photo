@@ -99,7 +99,7 @@ nav ul li a:hover {
 }
 
 .linkedinlogo img {
-    width: 30px;
+    width: 2vw;
     height: auto;
     margin-right: 200px;
     background-color: #ffffff;
@@ -107,6 +107,16 @@ nav ul li a:hover {
     margin-top: 2%;
 }
 
+.hidden {
+    opacity: 0;
+    transition: opacity 1s, transform 1.5s;
+    transform: translateY(5px);
+}
+
+.hidden.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 
 @media only screen and (max-width: 1024px) {
     .header-scroll {
@@ -120,6 +130,7 @@ nav ul li a:hover {
 
     .linkedinlogo img {
         margin-right: 50px;
+        display: none;
     }
 
     .nav-link {
@@ -188,7 +199,8 @@ nav ul li a:hover {
     }
 
     .linkedinlogo img {
-        width: 40%;
+        display: none;
+        width: 8vw;
         margin-right: 0;
     }
 
